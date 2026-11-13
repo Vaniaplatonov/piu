@@ -211,6 +211,6 @@ const data = [
 ['Разное','Понял, что взрослею: начал радоваться, когда отменяют планы.']
 ];
 const palettes=['linear-gradient(145deg,#ff765e,#a82846)','linear-gradient(145deg,#5453be,#171746)','linear-gradient(145deg,#168f83,#064e62)','linear-gradient(145deg,#f29b38,#bd3e38)','linear-gradient(145deg,#9d57a5,#422b74)','linear-gradient(145deg,#2876b8,#16345f)','linear-gradient(145deg,#8b9d34,#345323)','linear-gradient(145deg,#dc6285,#752e65)','linear-gradient(145deg,#be6544,#603a39)','linear-gradient(145deg,#3b9ba1,#225267)'];
-const feed=document.querySelector('#feed');feed.innerHTML=data.map((item,i)=>`<article class="story" style="background:${palettes[(i*7+Math.floor(i/3))%palettes.length]}"><div class="brand">🚽 Чат GPT для каканья</div><div class="counter">${String(i+1).padStart(3,'0')} / ${data.length}</div><div class="story-content"><div class="joke">${item[1]}</div></div><div class="hint">СВАЙП ВВЕРХ · СЛЕДУЮЩИЙ</div></article>`).join('');
+const feed=document.querySelector('#feed');feed.innerHTML=data.map((item,i)=>`<article class="story" style="background:${palettes[(i*7+Math.floor(i/3))%palettes.length]}"><div class="brand">🚽 Чат GPT для каканья</div><div class="counter">${String(i+1).padStart(3,'0')} / ${data.length}</div><div class="story-content"><div class="joke">${item[1]}</div></div>${i<3?`<div class="hint">СВАЙП ВВЕРХ · СЛЕДУЮЩИЙ</div>`:""}</article>`).join('');
 </script></body></html>
 
